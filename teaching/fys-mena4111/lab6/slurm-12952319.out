@@ -1,0 +1,100 @@
+Starting job 12952319 on c2-29 on saga at Wed Oct 16 19:02:17 CEST 2024
+
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) StdEnv
+ running on    4 total cores
+ distrk:  each k-point on    4 cores,    1 groups
+ distr:  one band on    2 cores,    2 groups
+ using from now: INCAR     
+ vasp.5.4.4.18Apr17-6-g9f103f2a35 (build Jul 15 2019 14:02:39) complex          
+  
+ POSCAR found type information on POSCAR  Cu
+ POSCAR found :  1 types and       4 ions
+ scaLAPACK will be used
+
+ ----------------------------------------------------------------------------- 
+|                                                                             |
+|  ADVICE TO THIS USER RUNNING 'VASP/VAMP'   (HEAR YOUR MASTER'S VOICE ...):  |
+|                                                                             |
+|      You have a (more or less) 'small supercell' and for smaller cells      |
+|      it is recommended  to use the reciprocal-space projection scheme!      |
+|      The real space optimization is not  efficient for small cells and it   |
+|      is also less accurate ...                                              |
+|      Therefore set LREAL=.FALSE. in the  INCAR file                         |
+|                                                                             |
+ ----------------------------------------------------------------------------- 
+
+ LDA part: xc-table for Pade appr. of Perdew
+ POSCAR, INCAR and KPOINTS ok, starting setup
+ FFT: planning ...
+ WAVECAR not read
+ entering main loop
+       N       E                     dE             d eps       ncg     rms          rms(c)
+DAV:   1     0.200768772636E+03    0.20077E+03   -0.14476E+04  1464   0.117E+03
+DAV:   2    -0.660254902731E+01   -0.20737E+03   -0.20255E+03  1466   0.290E+02
+DAV:   3    -0.169262746009E+02   -0.10324E+02   -0.99597E+01  1510   0.863E+01
+DAV:   4    -0.170529451965E+02   -0.12667E+00   -0.12485E+00  1562   0.847E+00
+DAV:   5    -0.170537570088E+02   -0.81181E-03   -0.81172E-03  1600   0.511E-01    0.137E+01
+RMM:   6    -0.154251479150E+02    0.16286E+01   -0.40473E+01  1468   0.659E+01    0.707E+00
+RMM:   7    -0.138131112402E+02    0.16120E+01   -0.67475E+00  1461   0.279E+01    0.862E-01
+RMM:   8    -0.137945277102E+02    0.18584E-01   -0.13838E-01  1470   0.305E+00    0.100E+00
+RMM:   9    -0.137822912082E+02    0.12237E-01   -0.18737E-02  1459   0.134E+00    0.615E-01
+RMM:  10    -0.137752279863E+02    0.70632E-02   -0.29688E-02  1466   0.159E+00    0.140E-01
+RMM:  11    -0.137739851655E+02    0.12428E-02   -0.24894E-03  1468   0.518E-01    0.337E-02
+RMM:  12    -0.137738842873E+02    0.10088E-03   -0.17043E-04  1454   0.102E-01    0.388E-02
+RMM:  13    -0.137738493503E+02    0.34937E-04   -0.19144E-04  1393   0.800E-02    0.119E-02
+RMM:  14    -0.137739655876E+02   -0.11624E-03   -0.50653E-05   998   0.328E-02    0.151E-02
+RMM:  15    -0.137740412072E+02   -0.75620E-04   -0.27967E-05   864   0.395E-02    0.798E-03
+RMM:  16    -0.137741016773E+02   -0.60470E-04   -0.88062E-06   813   0.135E-02    0.756E-03
+RMM:  17    -0.137741082186E+02   -0.65413E-05   -0.14130E-06   766   0.883E-03
+   1 F= -.13774108E+02 E0= -.13754792E+02  d E =-.137741E+02
+ BRION: g(F)=  0.231E-02 g(S)=  0.000E+00
+ bond charge predicted
+       N       E                     dE             d eps       ncg     rms          rms(c)
+DAV:   1    -0.137762814617E+02   -0.21798E-02   -0.59533E-01  1472   0.517E+00    0.548E-02
+RMM:   2    -0.137763786878E+02   -0.97226E-04   -0.11931E-03  1466   0.313E-01    0.406E-02
+RMM:   3    -0.137763260347E+02    0.52653E-04   -0.16864E-04  1453   0.111E-01    0.232E-02
+RMM:   4    -0.137763282590E+02   -0.22243E-05   -0.25047E-05   842   0.419E-02
+   2 F= -.13776328E+02 E0= -.13757473E+02  d E =-.222004E-02
+ BRION: g(F)=  0.189E-02 g(S)=  0.000E+00
+ BRIONS problems: POTIM should be increased
+ retain N=  1 mean eig= 8.27
+ eig:   8.272
+ bond charge predicted
+       N       E                     dE             d eps       ncg     rms          rms(c)
+DAV:   1    -0.137807534012E+02   -0.44274E-02   -0.33777E+01  1456   0.397E+01    0.425E-01
+RMM:   2    -0.137842365465E+02   -0.34831E-02   -0.82926E-02  1471   0.276E+00    0.868E-02
+RMM:   3    -0.137844192375E+02   -0.18269E-03   -0.14704E-03  1472   0.299E-01    0.266E-02
+RMM:   4    -0.137844664290E+02   -0.47192E-04   -0.90016E-05  1212   0.570E-02    0.130E-02
+RMM:   5    -0.137844790747E+02   -0.12646E-04   -0.20748E-05   828   0.386E-02    0.827E-03
+RMM:   6    -0.137844785108E+02    0.56391E-06   -0.24533E-06   771   0.164E-02
+   3 F= -.13784479E+02 E0= -.13768837E+02  d E =-.815025E-02
+ BRION: g(F)=  0.220E-03 g(S)=  0.000E+00 retain N=  1 mean eig= 7.08
+ eig:   7.077
+ reached required accuracy - stopping structural energy minimisation
+
+Job 12952319 consumed 0.0 billing hours from project nn9988k.
+
+Submitted 2024-10-16T19:01:59; waited 17.0 seconds in the queue after becoming eligible to run.
+
+Requested wallclock time: 10.0 minutes
+Elapsed wallclock time:   24.0 seconds
+
+Task and CPU statistics:
+ID              CPUs  Tasks  CPU util                Start  Elapsed  Exit status
+12952319           4            0.0 %  2024-10-16T19:02:16   24.0 s  0
+12952319.batch     4      1     3.1 %  2024-10-16T19:02:16   24.0 s  0
+12952319.vasp      4      4    82.4 %  2024-10-16T19:02:21   19.0 s  0
+
+Used CPU time:   1.1 CPU minutes
+Unused CPU time: 30.5 CPU seconds
+
+Memory statistics, in GiB:
+ID               Alloc   Usage
+12952319          14.8        
+12952319.batch    14.8     0.0
+12952319.vasp     14.8     0.0
+
+Job 12952319 completed at Wed Oct 16 19:02:40 CEST 2024

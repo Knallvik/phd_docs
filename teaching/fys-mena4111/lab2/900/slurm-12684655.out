@@ -1,0 +1,59 @@
+Starting job 12684655 on c5-[35,57] on saga at Wed Sep 18 14:38:10 CEST 2024
+
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) StdEnv
+ running on    4 total cores
+ distrk:  each k-point on    4 cores,    1 groups
+ distr:  one band on    2 cores,    2 groups
+ using from now: INCAR     
+ vasp.5.4.4.18Apr17-6-g9f103f2a35 (build Jul 15 2019 14:02:39) complex          
+  
+ POSCAR found type information on POSCAR  Si O 
+ POSCAR found :  2 types and       9 ions
+ scaLAPACK will be used
+ LDA part: xc-table for Pade appr. of Perdew
+ POSCAR, INCAR and KPOINTS ok, starting setup
+ FFT: planning ...
+ WAVECAR not read
+ entering main loop
+       N       E                     dE             d eps       ncg     rms          rms(c)
+DAV:   1     0.409219363615E+03    0.40922E+03   -0.34232E+04  1620   0.228E+03
+DAV:   2    -0.531565341597E+02   -0.46238E+03   -0.45137E+03  2150   0.399E+02
+DAV:   3    -0.802990218518E+02   -0.27142E+02   -0.27040E+02  1938   0.104E+02
+DAV:   4    -0.806723213476E+02   -0.37330E+00   -0.37258E+00  1952   0.132E+01
+DAV:   5    -0.806787247750E+02   -0.64034E-02   -0.64016E-02  1878   0.173E+00    0.188E+01
+RMM:   6    -0.710815806688E+02    0.95971E+01   -0.40400E+01  1723   0.330E+01    0.513E+00
+RMM:   7    -0.710516827249E+02    0.29898E-01   -0.15012E+00  1902   0.557E+00    0.339E+00
+RMM:   8    -0.710674091703E+02   -0.15726E-01   -0.25483E-01  1829   0.415E+00    0.624E-01
+RMM:   9    -0.710604464131E+02    0.69628E-02   -0.55989E-02  1933   0.122E+00    0.133E-01
+RMM:  10    -0.710634013841E+02   -0.29550E-02   -0.13626E-02  1893   0.617E-01    0.227E-01
+RMM:  11    -0.710621280339E+02    0.12734E-02   -0.25497E-03  1934   0.287E-01    0.621E-02
+RMM:  12    -0.710620843210E+02    0.43713E-04   -0.77427E-04  1925   0.145E-01    0.794E-03
+RMM:  13    -0.710620853565E+02   -0.10355E-05   -0.19631E-05  1297   0.262E-02
+   1 F= -.71062085E+02 E0= -.71062085E+02  d E =0.000000E+00
+
+Job 12684655 consumed 0.0 billing hours from project nn9988k.
+
+Submitted 2024-09-18T14:38:07; waited 3.0 seconds in the queue after becoming eligible to run.
+
+Requested wallclock time: 10.0 minutes
+Elapsed wallclock time:   41.0 seconds
+
+Task and CPU statistics:
+ID              CPUs  Tasks  CPU util                Start  Elapsed  Exit status
+12684655           4            0.0 %  2024-09-18T14:38:10   41.0 s  0
+12684655.batch     3      1     2.1 %  2024-09-18T14:38:10   41.0 s  0
+12684655.vasp      4      4    94.1 %  2024-09-18T14:38:14   37.0 s  0
+
+Used CPU time:   2.4 CPU minutes
+Unused CPU time: 22.1 CPU seconds
+
+Memory statistics, in GiB:
+ID               Alloc   Usage
+12684655          14.8        
+12684655.batch    11.1     0.0
+12684655.vasp     14.8     0.8
+
+Job 12684655 completed at Wed Sep 18 14:38:51 CEST 2024

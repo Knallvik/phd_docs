@@ -1,0 +1,44 @@
+ENCUT = 400:
+Gap	Band#	VBM	CBM	VBM-occ	CBM-occ	File
+  6.0206   24   1.0938   7.1144    2.00    0.00 OUTCAR
+
+ENCUT = 450:
+Gap	Band#	VBM	CBM	VBM-occ	CBM-occ	File
+  6.0176   24   1.1038   7.1214    2.00    0.00 OUTCAR
+
+ENCUT = 500:
+Gap	Band#	VBM	CBM	VBM-occ	CBM-occ	File
+  6.0164   24   1.1053   7.1217    2.00    0.00 OUTCAR
+
+ENCUT = 550:
+Gap	Band#	VBM	CBM	VBM-occ	CBM-occ	File
+  6.0159   24   1.1045   7.1204    2.00    0.00 OUTCAR
+
+ENCUT = 600:
+Gap	Band#	VBM	CBM	VBM-occ	CBM-occ	File
+  6.0179   24   1.1027   7.1206    2.00    0.00 OUTCAR
+
+ENCUT = 650:
+Gap	Band#	VBM	CBM	VBM-occ	CBM-occ	File
+  6.0194   24   1.1012   7.1206    2.00    0.00 OUTCAR
+
+ENCUT = 700:
+Gap	Band#	VBM	CBM	VBM-occ	CBM-occ	File
+  6.0200   24   1.1002   7.1202    2.00    0.00 OUTCAR
+
+ENCUT = 750:
+Gap	Band#	VBM	CBM	VBM-occ	CBM-occ	File
+  6.0204   24   1.0995   7.1199    2.00    0.00 OUTCAR
+
+ENCUT = 800:
+Gap	Band#	VBM	CBM	VBM-occ	CBM-occ	File
+  6.0205   24   1.0992   7.1197    2.00    0.00 OUTCAR
+
+ENCUT = 850:
+Gap	Band#	VBM	CBM	VBM-occ	CBM-occ	File
+  6.0206   24   1.0991   7.1197    2.00    0.00 OUTCAR
+
+ENCUT = 900:
+Gap	Band#	VBM	CBM	VBM-occ	CBM-occ	File
+  6.0207   24   1.0991   7.1198    2.00    0.00 OUTCAR
+

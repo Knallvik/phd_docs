@@ -1,0 +1,72 @@
+Starting job 12539350 on c5-[1-2] on saga at Thu Sep 12 10:56:08 CEST 2024
+
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) StdEnv
+ running on    4 total cores
+ distrk:  each k-point on    4 cores,    1 groups
+ distr:  one band on    2 cores,    2 groups
+ using from now: INCAR     
+ vasp.5.4.4.18Apr17-6-g9f103f2a35 (build Jul 15 2019 14:02:39) complex          
+  
+ POSCAR found type information on POSCAR  Si
+ POSCAR found :  1 types and       8 ions
+ scaLAPACK will be used
+
+ ----------------------------------------------------------------------------- 
+|                                                                             |
+|  ADVICE TO THIS USER RUNNING 'VASP/VAMP'   (HEAR YOUR MASTER'S VOICE ...):  |
+|                                                                             |
+|      You have a (more or less) 'small supercell' and for smaller cells      |
+|      it is recommended  to use the reciprocal-space projection scheme!      |
+|      The real space optimization is not  efficient for small cells and it   |
+|      is also less accurate ...                                              |
+|      Therefore set LREAL=.FALSE. in the  INCAR file                         |
+|                                                                             |
+ ----------------------------------------------------------------------------- 
+
+ LDA part: xc-table for Pade appr. of Perdew
+ POSCAR, INCAR and KPOINTS ok, starting setup
+ FFT: planning ...
+ WAVECAR not read
+ WARNING: random wavefunctions but no delay for mixing, default for NELMDL
+ entering main loop
+       N       E                     dE             d eps       ncg     rms          rms(c)
+DAV:   1     0.397481630146E+02    0.39748E+02   -0.78463E+03   440   0.658E+02
+DAV:   2    -0.407928841085E+02   -0.80541E+02   -0.75717E+02   606   0.124E+02
+DAV:   3    -0.439644838532E+02   -0.31716E+01   -0.31435E+01   562   0.249E+01
+DAV:   4    -0.440125194487E+02   -0.48036E-01   -0.47969E-01   526   0.384E+00
+DAV:   5    -0.440141346171E+02   -0.16152E-02   -0.16146E-02   572   0.524E-01    0.600E+00
+RMM:   6    -0.435185713191E+02    0.49556E+00   -0.26859E-01   441   0.209E+00    0.358E+00
+RMM:   7    -0.432920679061E+02    0.22650E+00   -0.58546E-01   444   0.318E+00    0.300E-01
+RMM:   8    -0.432972692754E+02   -0.52014E-02   -0.16659E-02   482   0.576E-01    0.452E-02
+RMM:   9    -0.432976690970E+02   -0.39982E-03   -0.12377E-03   504   0.164E-01    0.223E-02
+RMM:  10    -0.432977437455E+02   -0.74648E-04   -0.24111E-04   487   0.801E-02    0.647E-03
+RMM:  11    -0.432977360337E+02    0.77117E-05   -0.16043E-05   513   0.189E-02    0.169E-03
+RMM:  12    -0.432977356674E+02    0.36629E-06   -0.83292E-07   333   0.482E-03
+   1 F= -.43297736E+02 E0= -.43297736E+02  d E =0.000000E+00
+
+Job 12539350 consumed 0.0 billing hours from project nn9988k.
+
+Submitted 2024-09-12T10:55:43; waited 24.0 seconds in the queue after becoming eligible to run.
+
+Requested wallclock time: 10.0 minutes
+Elapsed wallclock time:   27.0 seconds
+
+Task and CPU statistics:
+ID              CPUs  Tasks  CPU util                Start  Elapsed  Exit status
+12539350           4            0.0 %  2024-09-12T10:56:07   27.0 s  0
+12539350.batch     2      1     5.0 %  2024-09-12T10:56:07   27.0 s  0
+12539350.vasp      4      4    66.7 %  2024-09-12T10:56:12   22.0 s  0
+
+Used CPU time:   1.0 CPU minutes
+Unused CPU time: 46.6 CPU seconds
+
+Memory statistics, in GiB:
+ID               Alloc   Usage
+12539350          14.8        
+12539350.batch     7.4     0.0
+12539350.vasp     14.8     0.2
+
+Job 12539350 completed at Thu Sep 12 10:56:34 CEST 2024

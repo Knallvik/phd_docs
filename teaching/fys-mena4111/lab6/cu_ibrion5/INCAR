@@ -1,0 +1,28 @@
+INCAR for calculation of zero point vibrations
+
+! Electronic relaxation
+ALGO   = Fast      ! Algorithm for electronic relaxation
+NELMIN = 4         ! Minimum # of electronic steps
+EDIFF  = 1E-6      ! Accuracy for electronic groundstate
+ENCUT  = 500       ! Cut-off energy for plane wave expansion
+PREC   = Accurate  ! Normal/Accurate
+LREAL  = Auto      ! Projection in reciprocal space?
+ISMEAR = -5         ! Smearing of partial occupancies. k-points >2: -5; else 0
+SIGMA  = 0.2       ! Smearing width
+ISPIN  = 1         ! Spin polarization?
+
+! Ionic relaxation
+IBRION = 5         ! Calculate Hessian matrix
+NFREE  = 2         ! Number of displacements
+POTIM  = 0.1     ! Step size
+ISIF   = 2         ! Relaxation. 2: ions 3: ions+cell
+
+! Output options
+LWAVE  = .FALSE.   ! Write WAVECAR?
+LCHARG = .FALSE.   ! Write CHGCAR?
+!NEDOS  = 2101       ! Number of grid points for DOS
+!EMIN   = -9        ! Minimum energy for evaluation of DOS
+!EMAX   =  12       ! Maximum energy for evaluation of DOS
+
+! Memory handling
+NPAR    = 4        ! Should be = (# cpus) when IBRION = 5!

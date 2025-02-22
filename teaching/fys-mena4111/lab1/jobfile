@@ -1,0 +1,20 @@
+#!/bin/bash
+# Specify jobname:
+#SBATCH --job-name=lab1
+# Specify the number of nodes and the number of CPU's (tasks) per node:
+#SBATCH --ntasks=4
+# Specify account. 
+#SBATCH --account=nn9988k
+# The maximum time allowed for the job, in hh:mm:ss
+#SBATCH --time=00:10:00
+# Maximum memory allowed per cpu
+#SBATCH --mem-per-cpu=3800M
+
+## Set up job environment    
+module purge
+module load intel/2022b
+
+## Run command 
+srun /cluster/projects/nn9988k/fm4111/bin/vasp
+
+exit 0

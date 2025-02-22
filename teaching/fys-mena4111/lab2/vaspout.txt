@@ -1,0 +1,44 @@
+ENCUT = 400:
+MxForce	Drift	Pressure	TOTEN   	Filename
+0.5997	0.0004	   33.27	-71.145663	OUTCAR
+
+ENCUT = 450:
+MxForce	Drift	Pressure	TOTEN   	Filename
+0.5944	0.0001	   72.07	-71.028328	OUTCAR
+
+ENCUT = 500:
+MxForce	Drift	Pressure	TOTEN   	Filename
+0.5694	0.0000	   80.30	-70.990729	OUTCAR
+
+ENCUT = 550:
+MxForce	Drift	Pressure	TOTEN   	Filename
+0.5949	0.0000	   80.90	-70.999347	OUTCAR
+
+ENCUT = 600:
+MxForce	Drift	Pressure	TOTEN   	Filename
+0.5946	0.0000	   78.88	-71.017156	OUTCAR
+
+ENCUT = 650:
+MxForce	Drift	Pressure	TOTEN   	Filename
+0.6033	0.0000	   77.83	-71.034662	OUTCAR
+
+ENCUT = 700:
+MxForce	Drift	Pressure	TOTEN   	Filename
+0.5776	0.0000	   79.22	-71.043727	OUTCAR
+
+ENCUT = 750:
+MxForce	Drift	Pressure	TOTEN   	Filename
+0.5997	0.0000	   79.83	-71.051866	OUTCAR
+
+ENCUT = 800:
+MxForce	Drift	Pressure	TOTEN   	Filename
+0.5863	0.0000	   80.97	-71.060278	OUTCAR
+
+ENCUT = 850:
+MxForce	Drift	Pressure	TOTEN   	Filename
+0.5879	0.0000	   81.83	-71.062139	OUTCAR
+
+ENCUT = 900:
+MxForce	Drift	Pressure	TOTEN   	Filename
+0.5868	0.0000	   82.06	-71.062085	OUTCAR
+

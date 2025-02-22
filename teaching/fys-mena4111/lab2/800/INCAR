@@ -1,0 +1,22 @@
+INCAR for static calculation.
+
+! Electronic relaxation
+ALGO   = Fast      ! Algorithm for electronic relaxation
+NELMIN = 4         ! Minimum # of electronic steps
+EDIFF  = 1E-5      ! Accuracy for electronic groundstate
+ENCUT  = 800       ! Cut-off energy for plane wave expansion
+PREC   = Normal    ! Low/Normal/Accurate
+LREAL  = Auto      ! Projection in reciprocal space?
+ISMEAR = -5        ! Smearing of partial occupancies.
+SIGMA  = 0.2       ! Smearing width
+ISPIN  = 1         ! Spin polarization?
+
+! Ionic relaxation
+NSW    = 0         ! Final high-accuracy calculation without relaxation
+
+! Output options
+LWAVE  = .FALSE.   ! Write WAVECAR?
+
+
+! Memory handling
+NPAR    = 2        ! Should be = sqrt(cpus)

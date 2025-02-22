@@ -1,0 +1,26 @@
+INCAR for static total energy calculation.
+
+! Electronic relaxation
+ALGO   = Fast      ! Algorithm for electronic relaxation
+NELMIN = 4         ! Minimum # of electronic steps
+EDIFF  = 1E-6      ! Accuracy for electronic groundstate
+ENCUT  = 250       ! Cut-off energy for plane wave expansion
+PREC   = Normal    ! Low/Normal/Accurate
+LREAL  = Auto      ! Projection in reciprocal space?
+ISMEAR = 0         ! Smearing of partial occupancies.
+SIGMA  = 0.1       ! Smearing width
+ISPIN  = 1         ! Spin polarization?
+
+! Ionic relaxation
+NSW    = 0         ! Final high-accuracy calculation without relaxation
+
+! Output options
+LWAVE  = .FALSE.   ! Write WAVECAR?
+NEDOS  = 2401      ! Number of grid points for DOS
+EMIN   = -17       ! Minimum energy for evaluation of DOS
+EMAX   =  7        ! Maximum energy for evaluation of DOS
+LELF   = .TRUE.    ! Electron localization function
+LORBIT = 11        ! Write LDOS to DOSCAR + PROCAR
+
+! Memory handling
+NPAR    = 2        ! Should be ~sqrt(cpus)
