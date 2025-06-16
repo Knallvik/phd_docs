@@ -1,0 +1,180 @@
+% !TeX spellcheck = en_GB
+% !TeX program = lualatex
+%
+% v 2.3  Feb 2019   Volker RW Schaa
+%		# changes in the collaboration therefore updated file "jacow-collaboration.tex"
+%		# all References with DOIs have their period/full stop before the DOI (after pp. or year)
+%		# in the author/affiliation block all ZIP codes in square brackets removed as it was not %         understood as optional parameter and ZIP codes had bin put in brackets
+%       # References to the current IPAC are changed to "IPAC'19, Melbourne, Australia"
+%       # font for ‘url’ style changed to ‘newtxtt’ as it is easier to distinguish "O" and "0"
+%
+\documentclass[a4paper,
+               %boxit,        % check whether paper is inside correct margins
+               %titlepage,    % separate title page
+                %refpage       % separate references
+               biblatex,     % biblatex is used
+               %keeplastbox,   % flushend option: not to un-indent last line in References
+               %nospread,     % flushend option: do not fill with whitespace to balance columns
+               %hyphens,      % allow \url to hyphenate at "-" (hyphens)
+               %xetex,        % use XeLaTeX to process the file
+               %luatex,       % use LuaLaTeX to process the file
+               ]{jacow}
+%
+% ONLY FOR \footnote in table/tabular
+%
+\usepackage{pdfpages,multirow,ragged2e} %
+%
+% CHANGE SEQUENCE OF GRAPHICS EXTENSION TO BE EMBEDDED
+% ----------------------------------------------------
+% test for XeTeX where the sequence is by default eps-> pdf, jpg, png, pdf, ...
+%    and the JACoW template provides JACpic2v3.eps and JACpic2v3.jpg which
+%    might generates errors, therefore PNG and JPG first
+%
+\makeatletter%
+	\ifboolexpr{bool{xetex}}
+	 {\renewcommand{\Gin@extensions}{.pdf,%
+	                    .png,.jpg,.bmp,.pict,.tif,.psd,.mac,.sga,.tga,.gif,%
+	                    .eps,.ps,%
+	                    }}{}
+\makeatother
+
+% CHECK FOR XeTeX/LuaTeX BEFORE DEFINING AN INPUT ENCODING
+% --------------------------------------------------------
+%   utf8  is default for XeTeX/LuaTeX
+%   utf8  in LaTeX only realises a small portion of codes
+%
+\ifboolexpr{bool{xetex} or bool{luatex}} % test for XeTeX/LuaTeX
+ {}                                      % input encoding is utf8 by default
+ {\usepackage[utf8]{inputenc}}           % switch to utf8
+
+\usepackage[USenglish]{babel}
+
+\usepackage{subcaption}
+
+%
+% if BibLaTeX is used
+%
+\ifboolexpr{bool{jacowbiblatex}}%
+ {%
+  \addbibresource{TUPS013.bib}
+ }{}
+\listfiles
+
+
+%%
+%%   Lengths for the spaces in the title
+%%   \setlength\titleblockstartskip{..}  %before title, default 3pt
+%%   \setlength\titleblockmiddleskip{..} %between title + author, default 1em
+%%   \setlength\titleblockendskip{..}    %afterauthor, default 1em
+
+
+\begin{document}
+
+\title{Ion-motion simulations of a  \\ plasma-wakefield experiment at FLASHForward}
+
+\author{D. Kalvik\thanks{daniel.kalvik@fys.uio.no}, P. Drobniak, F. Pe\~{n}a\textsuperscript{1}, C. A. Lindstr{\o}m, \\ 
+    Department of Physics, University of Oslo, Oslo, Norway \\
+        J. Beinortaite, L. Boulton, P. Caminal
+        J. Garland, G. Loisch,\\
+        J. B. Svensson, M. Thévenet, S. Wesch, J. Wood, \\
+        Deutsches Elektronen-Synchrotron, Hamburg, Germany \\
+        J. Osterhoff, Lawrence Berkeley National Laboratory, Berkeley, USA \\
+        R. D'Arcy, John Adams Institute, Department of Physics, University of Oxford, Oxford, UK\\
+        S. Diederichs, CERN, Geneva, Switzerland\\
+		\textsuperscript{1}also at Ludwig-Maximilians-Universität München, Munich, Germany}
+	
+\maketitle
+
+
+\begin{abstract}
+   In plasma-based acceleration, an ultra-relativistic particle bunch---or an intense laser beam---is used to expel electrons from its propagation path, forming a wake that is devoid of electrons. The ions, being significantly more massive, are often assumed to be stationary. However, both theory and simulations suggest that any sufficiently dense electron bunch can trigger ion motion, and its effect must be taken into account. We simulate beam-driven plasma wakefields to identify key features---such as longitudinally dependent emittance growth---that could be observed in an experiment using plasma and beam parameters from the FLASHForward facility at DESY.
+\end{abstract}
+
+\section{Introduction}
+Plasma-acceleration is a method of accelerating electrons on a significantly shorter length scale than conventional RF-accelerators \cite{TajimaDawson, chen, Ruth:157249}. By injecting a high-intensity laser or an ultra-relativistic charged particle beam---referred to as a \textit{driver}---into a plasma, the longitudinal electric field within the plasma can reach the order of tens of gigavolts per meter \cite{LeemansW.P2006Gebf, LeemansWP2014Mebf, ClaytonChristopherE2007Edo4}. In the most extreme case, the driver completely expels the plasma electrons from its path---creating a bubble void of plasma electrons. The ions however, are often considered stationary due to their mass.
+
+As shown in Refs.~\cite{Rosenzweig, Lee, Gholizadeh}, intense electron bunches are capable of inducing non-negligible ion motion. This ion motion will induce non-linear focusing forces that can cause the emittance of the witness to increase \cite{An}. The preservation of emittance is critical in applications within high-energy physics, such as for free electron lasers and linear colliders. It is therefore of interest to measure and quantify the effects of ion motion experimentally.
+
+
+In this paper, we show a possible experiment to measure the effects of ion motion; we show the expected results---obtained through simulations---and what would be the diagnostic setup. The simulations are based on the beam and plasma parameters available at the FLASHForward facility at DESY \cite{Darcy}.
+
+\section{Theory}
+The amount of ion motion for a round beam can be approximated by the equation given in Ref.~\cite{Rosenzweig},
+\begin{equation}
+    \Delta \phi \simeq \sqrt{\frac{2\pi Z r_a \sigma_z N_b}{A\varepsilon_{n,x}}}\left(r_en_0\gamma\right)^{1/4}.
+    \label{eq:ion_motion}
+\end{equation}
+The parameters of the equation are the phase-advance, $\Delta \phi$; the net charge of the plasma ion species, $Z$; the classical radius of a singly charged ion of mass $1$ amu, $r_a$; the rms bunch-length, $\sigma_z$; the number of bunch-electrons, $N_b$; the atomic mass of the ion-species (in amu), $A$; the normalized horizontal emittance, $\varepsilon_{n,x}$; the classical electron radius, $r_e$; the unperturbed ion/electron density, $n_0$, and the beam Lorentz-factor, $\gamma$. The phase-advance is a measure of how much the ions oscillate while under the focusing field of the bunch---assumed to be cylindrically symmetric. Maximum ion motion occurs after a phase-advance of $\frac{\pi}{2}$, leading to a full collapse of the ion column.
+
+The effects of the ion motion grow towards the back of the bunch---corresponding to lower values in the co-moving frame of the bubble, $z$---as it is where the ions have spent the most time within its fields. If we insert a single driver into the plasma, and make it long enough to fill most of the bubble, we can correlate the higher energies with the back of the bunch. Measuring the emittance as a function of energy towards the back of the bunch should therefore give us an indicator of ion motion.
+
+\section{Simulations}
+In this section, we present the results obtained in the simulation study. To simulate the plasma-acceleration, we used HiPACE++ \cite{Hipace}. 
+For the simulations, we use a constant plasma density of \SI{2e15}{cm^{-3}} (up/down-ramps \cite{uniform-ramp}), and \(\SI{1.2e16}{cm^{-3}}\) (flattop). The flattop length is \(\SI{40}{mm}\), and the ramp lengths are \SI{12}{mm} each. The beam has an energy of \SI{1}{GeV}, emittances of (\SI{1.5}{mm\,mrad} (horizontal) and \(\SI{2.5}{mm\,mrad}\) (vertical), a charge of \SI{-0.75}{nC}, and a relative energy spread of \SI{0.5}{\%}.
+The $\beta$-functions are down-ramped to five times the matched value in the flattop region, from an initial value that is 30 times larger than the matched value. The current profile is a realistic non-Gaussian profile based on experiments \cite{Darcy, Lindstrom} with an rms bunch-length of \(\SI{71}{\mu m}\) and a peak current of \(\SI{1.1}{kA}\).
+The simulation box uses mesh refinement and has two regions. In the flattop, the larger region covers a length in $z$ of \SI{815.0}{$\mu$m} (\SI{877} cells) and a width in both $x$ and $y$ of \SI{950.6}{$\mu$m} (\SI{1023}{}$\times$\SI{1023} cells), 
+and a central region with the same length and resolution in $z$ but with \SI{16}{} times the resolution in $x$ and $y$ ($\pm$ \SI{6.1}{$\mu$m}, \SI{511}{}$\times$\SI{511} cells).
+In the ramps, the transverse size and resolution are all multiplied by a factor \SI{2.45}{}.
+The number of macro-particles (constant weight) is \SI{8e6}{}.
+
+For the spectrometer simulations, we used ImpactX \cite{huebl}. The beam was obtained from the output of the HiPACE++ simulation. The spectrometer consists of 5 quadrupoles, a dipole, and a spectrometer screen. The first two quadrupoles have the same field gradient, the same goes for the next two, while the last has a third, different gradient. The gradient for the first two quadrupoles is \SI{29.55}{T\per m}, for the next two it is \SI{-40.62}{T\per m}, and for the final it is \SI{43.92}{T\per m}. The lengths of all the quadrupoles are \SI{0.1137}{m}. The dipole has a magnetic field of \SI{-0.28}{T} and a length of \SI{1.07}{m}.
+The distances between the elements (starting at the plasma) are
+\SI{0.66}{m}, \SI{0.27}{m}, \SI{0.26}{m}, \SI{0.27}{m}, \SI{0.38}{m}, \SI{3.9}{m} and \SI{1.38}{m}.
+
+In running the simulations, we have used the Advanced Beginning-to-End Linac (ABEL) simulation framework \cite{ben}. ABEL combines different codes, which allows for agile design and simulations of various beamline elements.
+\subsection{Ion Motion}
+For the stated parameters, equation \ref{eq:ion_motion} predicts a phase-advance through the beam, $\Delta\phi=\SI{0.66}{}$ for hydrogen, and $\Delta\phi=\SI{0.10}{}$ for argon. Since the equation is derived for round beams we use $\varepsilon_{n,x}=\sqrt{\varepsilon_{n,x}\varepsilon_{n,y}}$. These parameters do not correspond to a complete collapse of the ion column, even for hydrogen, but we still see a significant difference in the predicted amount of ion motion. Figure \ref{fig:density} shows the plasma density for both electrons and ions in argon and hydrogen. The presence of ion motion is clearly more prevalent in hydrogen compared to argon.
+\begin{figure}[!tbh]
+    \centering
+    \includegraphics[width=0.9\linewidth]{TUPS013_f1.pdf}
+    \caption{Plasma density of plasma electrons (blue colormap) and plasma ions (green colormap) in (a) argon and (b) hydrogen, without showing the beam density. A strong on-axis ion spike is visible in hydrogen.}
+    \label{fig:density}
+\end{figure}
+
+\subsection{Longitudinal phase space}
+In order to correlate energy with the longitudinal position along the beam, we must verify that the energy of the particles is indeed increasing with longitudinal position within the beam (for the accelerated part of the beam). The longitudinal phase space of the beams after traversing the plasma is shown in Fig.~\ref{fig:lps}. Above \SI{1.02}{GeV} the only particles are the ones in the back of the bubble. Beyond this point, we can be confident in correlating energy with the longitudinal position of the beam.
+\begin{figure}[!tbh]
+    \centering
+    \includegraphics[width=1\linewidth]{TUPS013_f2.pdf}
+    \caption{The simulated longitudinal phase space of an electron beam after traversing a plasma. This resulting phase space will generally be similar for both hydrogen- and argon-based acceleration.}
+    \label{fig:lps}
+\end{figure}
+\subsection{Horizontal emittance}
+\label{section:horizontal_emittance}
+\begin{figure}[!tbh]
+    \centering
+    \includegraphics[width=0.9\linewidth]{TUPS013_f3.pdf}
+    \caption{Emittance evolution along both matched and mismatched beams in hydrogen and argon plasmas. Energies above \SI{1.02}{GeV} correlate with lower values of $z$ (see Fig.~\ref{fig:lps}).}
+    \label{fig:emittances}
+\end{figure}
+Figure \ref{fig:emittances} shows the emittance evolution---post plasma-acceleration---for both a mismatched and matched beam, in both argon and hydrogen. In both the matched and mismatched cases, the emittance evolution in hydrogen stands out from that in argon. In the case of a matched beam, the difference is subtle ($\sim$\SI{10}{\%}), and therefore likely to be difficult to measure. The difference is much less subtle in the case of a mismatched beam, as the emittance is seen growing substantially more in hydrogen, as opposed to argon. The reason for this is that the particles will have a larger oscillation amplitude, which will in turn make them see more of the nonlinear focusing induced by the ion motion \cite{Benedetti, An}.
+
+\subsection{Spectrometer imaging}
+To verify Fig.~\ref{fig:emittances} experimentally, one can perform an object-plane scan using an imaging spectrometer \cite{Lindstrom}. We simulate a spectrometer setup similar to that of FLASHForward at DESY---sketched in Fig.~\ref{fig:FF diagnostics}. The beam is focused by the quadrupoles and bent vertically towards the spectrometer screen by the dipole. The screen captures the transverse profile of the dispersed beam, which allows for measuring the energy spectrum in the vertical plane, and the transverse phase space in the horizontal plane.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{TUPS013_f4.pdf}
+    \caption{The imaging spectrometer setup. The quadrupoles captures and focuses the beam, the dipole bends the beam in the vertical plane, and the spectrometer screen captures the transverse profile of the beam.}
+    \label{fig:FF diagnostics}
+\end{figure}
+Figure \ref{fig:Spec_both} shows a single spectrometer image, point-to-point imaged at \SI{1}{GeV}. The same exact parameters have been used in both images, except for the choice of ion species. A distinct feature of these images is the shape of the beam. In the argon plasma, the beam has maintained its Gaussian shape in the horizontal plane, while in the hydrogen plasma, this is not the case.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{TUPS013_f5.pdf}
+    \caption{Simulated spectrometer images for (a): Argon and (b): Hydrogen. There is a clear difference in both size and shape between a beam accelerated in hydrogen-plasma, and one accelerated in argon-plasma. The beam is mismatched in both plots.}
+    \label{fig:Spec_both}
+\end{figure}
+
+\section{Conclusion}
+We have simulated a beam in both hydrogen and argon plasmas, and simulated the resulting beam through a spectrometer. We have covered two distinct features of ion motion, namely emittance growth, and a change in transverse particle distribution. The emittance growth in hydrogen is significantly larger than in argon, and is therefore a clear sign of ion motion. In addition, the simulated spectrometer images show a non-Gaussian shape in the case of hydrogen-based acceleration, whereas the argon-simulated beam maintained its Gaussian shape. The results are promising for the prospects of observing ion motion induced emittance growth at FLASHForward.
+
+\section{ACKNOWLEDGEMENTS}
+This work is funded by the European Research Council (ERC Grant Agreement No. 101116161). We acknowledge Sigma2 - the National Infrastructure for High-Performance Computing and Data Storage in Norway for awarding this project access to the LUMI supercomputer, owned by the EuroHPC Joint Undertaking, hosted by CSC (Finland) and the LUMI consortium. This work was supported by the Director, Office of Science, Office of High Energy Physics, of the U.S. Department of Energy, under Contract No.~DE-AC0205CH11231.
+%
+% only for "biblatex"
+%
+\ifboolexpr{bool{jacowbiblatex}}%
+	{\printbibliography}%
+	{
+}
+\end{document}
